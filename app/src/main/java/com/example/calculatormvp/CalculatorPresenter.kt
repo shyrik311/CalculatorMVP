@@ -18,6 +18,11 @@ class CalculatorPresenter(private val view: CalculatorView, private val calculat
         view.workSpace(workSpace.addToWorkSpace(replacementOperator))
     }
 
+    fun parentheses(isLeft: Boolean) {
+        val bracket = if (isLeft) "(" else ")"
+        view.workSpace(workSpace.addToWorkSpace(bracket))
+    }
+
     fun equals() {
         val expression = workSpace.getExpression().replace("÷", "/").replace("×", "*")
         try {
@@ -42,11 +47,5 @@ class CalculatorPresenter(private val view: CalculatorView, private val calculat
             workSpace.setExpression(newExpression)
             view.workSpace(newExpression)
         }
-    }
-
-    fun parentheses(isLeft: Boolean) {
-        val bracket = if (isLeft) "(" else ")"
-        view.workSpace(workSpace.addToWorkSpace(bracket))
-
     }
 }

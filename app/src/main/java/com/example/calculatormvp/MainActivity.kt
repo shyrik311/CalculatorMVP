@@ -7,7 +7,7 @@ import com.example.calculatormvp.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity(), CalculatorView {
     private lateinit var presenter: CalculatorPresenter
     private lateinit var binding: ActivityMainBinding
-    var isLeftBracket = true
+    private var isLeftBracket = true
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
